@@ -7,7 +7,7 @@ An Expo module for [Robot Temi SDK](https://github.com/robotemi/sdk). Currently 
     - If you're using Windows, you need to use [WSL](https://learn.microsoft.com/en-us/windows/wsl/install).
     - Remember to configure your `ANDROID_HOME` and `PATH` variables. 
     - For WSL, you might want to make a copy of `adb.exe` renamed as `adb`, or adding `alias adb='adb.exe'` in your `.bashrc`.
-- [OpenJDK](https://openjdk.org/)
+- [OpenJDK 17](https://openjdk.org/)
 - [Node.js](https://nodejs.org/en/download)
 ### Installation
 ```
