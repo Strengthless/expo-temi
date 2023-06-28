@@ -3,6 +3,12 @@ package expo.modules.temi
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.core.os.bundleOf
+import com.robotemi.sdk.*
+import com.robotemi.sdk.Robot.*
+// import com.robotemi.sdk.Robot.Companion.getInstance
+import com.robotemi.sdk.TtsRequest.Companion.create
+import com.robotemi.sdk.voice.ITtsService
+import com.robotemi.sdk.voice.model.TtsVoice
 import expo.modules.kotlin.modules.Module
 import expo.modules.kotlin.modules.ModuleDefinition
 
@@ -19,6 +25,12 @@ class ExpoTemiModule : Module() {
 
     Function("getTheme") {
       return@Function getPreferences().getString("theme", "system")
+    }
+
+    Function("speak") { 
+      private var robot = Robot.getInstance()
+      // val ttsRequest = create(text = "test", language = 1)
+      // Robot.getInstance().speak(ttsRequest)
     }
   }
 

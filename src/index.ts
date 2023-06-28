@@ -18,3 +18,7 @@ export function getTheme(): string {
 export function setTheme(theme: string): void {
   return ExpoTemiModule.setTheme(theme);
 }
+
+export function speak(): void {
+  return ExpoTemiModule.speak();
+}
