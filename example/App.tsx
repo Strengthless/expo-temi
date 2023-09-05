@@ -23,14 +23,13 @@ export default function App() {
   const nextTheme = theme === 'dark' ? 'light' : 'dark';
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', gap: 16 }}>
-      <Text style={{ fontSize: 64, margin: 32 }}>POC of using Expo on Temi</Text>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', gap: 32 }}>
+      <Text style={{ fontSize: 64, margin: 16 }}>POC of using Expo on Temi</Text>
       <View style={{ flexDirection: 'row' }}>
         <TextInput
-          style={{ width: 500 }}
+          style={{ width: 500, height: 100 }}
           onChangeText={setText}
           value={text}
-          numberOfLines={3}
         />
       </View>
       <Button mode="contained" onPress={() => 
