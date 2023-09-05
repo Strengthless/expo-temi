@@ -1,8 +1,5 @@
 {
   "platforms": ["android"],
-  "ios": {
-    "modules": ["ExpoTemiModule"]
-  },
   "android": {
     "modules": ["expo.modules.temi.ExpoTemiModule"]
   }

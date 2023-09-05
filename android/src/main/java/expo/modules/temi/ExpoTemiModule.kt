@@ -5,7 +5,7 @@ import android.content.SharedPreferences
 import androidx.core.os.bundleOf
 import com.robotemi.sdk.*
 import com.robotemi.sdk.Robot.*
-// import com.robotemi.sdk.Robot.Companion.getInstance
+import com.robotemi.sdk.Robot.Companion.getInstance
 import com.robotemi.sdk.TtsRequest.Companion.create
 import com.robotemi.sdk.voice.ITtsService
 import com.robotemi.sdk.voice.model.TtsVoice
@@ -27,10 +27,10 @@ class ExpoTemiModule : Module() {
       return@Function getPreferences().getString("theme", "system")
     }
 
-    Function("speak") { 
-      private var robot = Robot.getInstance()
-      // val ttsRequest = create(text = "test", language = 1)
-      // Robot.getInstance().speak(ttsRequest)
+    Function("speak") { text: String ->
+      var robot = Robot.getInstance()
+      val ttsRequest = TtsRequest.create(speech = text, language = TtsRequest.Language.ZH_HK, isShowOnConversationLayer = false)
+      robot.speak(ttsRequest)
     }
   }
 
