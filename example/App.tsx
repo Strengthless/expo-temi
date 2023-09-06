@@ -1,26 +1,14 @@
 import * as Temi from 'expo-temi';
-import { useEffect, useState } from 'react';
-import { View, Image } from 'react-native'
+import { useState } from 'react';
+import { View } from 'react-native'
 import { Button, Text, TextInput } from 'react-native-paper';
 
 export default function App() {
-  const [theme, setTheme] = useState<string>(Temi.getTheme());
   const [text, setText] = useState<string>('');
-
-  useEffect(() => {
-    const subscription = Temi.addThemeListener(({ theme: newTheme }) => {
-      setTheme(newTheme);
-    });
-
-    return () => subscription.remove();
-  }, [setTheme]);
 
   async function handleUserInput(text: string) {
     Temi.speak(text);
   }
-
-  // Toggle between dark and light theme
-  const nextTheme = theme === 'dark' ? 'light' : 'dark';
 
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', gap: 32 }}>
@@ -37,14 +25,6 @@ export default function App() {
       }>
         Let temi speak
       </Button>
-      {/* <Image
-        style={{
-          width: 400,
-          height: 400,
-          margin: 32,
-        }}
-        source={require('./assets/poc-img.jpg')}
-      /> */}
     </View>
   );
 }

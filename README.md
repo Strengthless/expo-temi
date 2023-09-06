@@ -1,24 +1,22 @@
 # Expo-Temi
-An Expo module for [Robot Temi SDK](https://github.com/robotemi/sdk). Currently under development.
+`expo-temi` provides an interface to communicate with [Temi](https://www.robotemi.com/robots/) hardware, achieved using [Temi SDK](https://github.com/robotemi/sdk).
 
-## Setup
-### Prerequisites
-- [Android Studio](https://docs.expo.dev/workflow/android-studio-emulator/#set-up-a-virtual-device) 
-    - If you're using Windows, you need to use [WSL](https://learn.microsoft.com/en-us/windows/wsl/install).
-    - Remember to configure your `ANDROID_HOME` and `PATH` variables. 
-    - For WSL, you might want to make a copy of `adb.exe` renamed as `adb`, or adding `alias adb='adb.exe'` in your `.bashrc`.
-- [OpenJDK 17](https://openjdk.org/)
-- [Node.js](https://nodejs.org/en/download)
+Currently still under development, PRs are welcomed.
+
 ### Installation
+You need to use JDK 17 for this module, otherwise Android compilation might fail.
 ```
-git clone https://github.com/Strengthless/expo-temi.git
-cd ./expo-temi
-npm install
-cd ./example
-npm install
+npx expo install expo-temi
 ```
-### Development
-The only three files that you'd likely be interested in are `/android/src/main/java/expo/modules/temi/ExpoTemiModule.kt`, `/src/index.ts` and `/example/App.tsx`, which are respectively responsible for Native code implementation, Expo module definitions and Expo module testing.
+
+### API documentation
+We are currently on Temi SDK `1.131.4`, and we hope to port every method from the official [Temi Robot API](https://github.com/robotemi/sdk/wiki).
+
+As of the time being, only the `speak(text: string)` has been implemented as a POC.
+### Contributing
+PRs are welcomed! The source code is available at https://github.com/strengthless/expo-temi.
+
+The only three files that you'd likely be interested in are `/android/src/main/java/expo/modules/temi/ExpoTemiModule.kt`, `/src/index.ts` and `/example/App.tsx`, which are responsible for native code implementation, Expo module API definitions and Expo module testing.
 ```
 npm run build
 cd ./example

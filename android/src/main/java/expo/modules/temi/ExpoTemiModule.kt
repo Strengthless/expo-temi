@@ -16,17 +16,6 @@ class ExpoTemiModule : Module() {
   override fun definition() = ModuleDefinition {
     Name("ExpoTemi")
 
-    Events("onChangeTheme")
-
-    Function("setTheme") { theme: String ->
-      getPreferences().edit().putString("theme", theme).commit()
-      this@ExpoTemiModule.sendEvent("onChangeTheme", bundleOf("theme" to theme))
-    }
-
-    Function("getTheme") {
-      return@Function getPreferences().getString("theme", "system")
-    }
-
     Function("speak") { text: String ->
       var robot = Robot.getInstance()
       val ttsRequest = TtsRequest.create(speech = text, language = TtsRequest.Language.ZH_HK, isShowOnConversationLayer = false)
