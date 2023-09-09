@@ -1,5 +1,5 @@
 # Expo-Temi
-`expo-temi` provides an interface to communicate with [Temi](https://www.robotemi.com/robots/) hardware, achieved using [Temi SDK](https://github.com/robotemi/sdk).
+`expo-temi` provides an interface to communicate with [Temi](https://www.robotemi.com/robots/) hardware using [Temi SDK](https://github.com/robotemi/sdk).
 
 Currently still under development, PRs are welcomed.
 
@@ -16,7 +16,7 @@ As of the time being, only the `speak(text: string)` has been implemented as a P
 ### Contributing
 PRs are welcomed! The source code is available at https://github.com/strengthless/expo-temi.
 
-The only three files that you'd likely be interested in are `/android/src/main/java/expo/modules/temi/ExpoTemiModule.kt`, `/src/index.ts` and `/example/App.tsx`, which are responsible for native code implementation, Expo module API definitions and Expo module testing.
+The only three files that you'd likely be interested in are `/android/src/main/java/expo/modules/temi/ExpoTemiModule.kt`, `/src/index.ts` and `/example/App.tsx`, which are respectively responsible for native code implementation, Expo module API definitions and Expo module testing.
 ```
 npm run build
 cd ./example
