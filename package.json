@@ -1,6 +1,6 @@
 {
   "name": "expo-temi",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "An Expo module for Robot Temi SDK",
   "main": "build/index.js",
   "types": "build/index.d.ts",
