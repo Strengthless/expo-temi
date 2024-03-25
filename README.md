@@ -26,6 +26,23 @@ We are currently on Temi SDK `1.131.4`, and we hope to port every method from th
 
 As of the time being, only the `speak(text: string)` has been implemented as a POC.
 
+### Troubleshooting
+
+If your EAS builds are not working due to minSdkVersion < 23, you might need to install [BuildProperties SDK](https://docs.expo.dev/versions/latest/sdk/build-properties/) and modify your Expo config as follows.
+
+```js
+plugins: [
+    [
+      "expo-build-properties",
+      {
+        android: {
+          minSdkVersion: 23
+        }
+      }
+    ]
+]
+```
+
 ### Contributing
 
 PRs are welcomed! The source code is available at https://github.com/strengthless/expo-temi.
